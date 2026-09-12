@@ -26,11 +26,18 @@ const userSchema = new mongoose.Schema(
     location: {
       state: { type: String, default: "" },
       district: { type: String, default: "" },
+      village: { type: String, default: "" }, // added for healthcare module
     },
     userType: {
       type: String,
       enum: ["citizen", "admin"],
       default: "citizen",
+    },
+    healthRole: {
+      // added for healthcare module — doesn't touch userType
+      type: String,
+      enum: ["patient", "asha", "doctor"],
+      default: "patient",
     },
     profile: {
       isFarmer: { type: Boolean, default: false },

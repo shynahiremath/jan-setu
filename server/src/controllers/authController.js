@@ -38,6 +38,7 @@ export const registerUser = async (req, res) => {
         name: newUser.name,
         email: newUser.email,
         language: newUser.language,
+       healthRole: newUser.healthRole,
       },
     });
   } catch (error) {
@@ -74,6 +75,7 @@ export const loginUser = async (req, res) => {
         name: user.name,
         email: user.email,
         language: user.language,
+        healthRole: user.healthRole,
       },
     });
   } catch (error) {
